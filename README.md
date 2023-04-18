@@ -1,4 +1,4 @@
-# Email-List-Checker
+# Email-Lists-Checker
 
 Python based program that checks a new email list against an old list to let you know which emails addresses have been added and removed.
 
