@@ -7,6 +7,6 @@ How to use the program:
 2. Paste new email list in the second text box (ONE EMAIL ADDRESS PER LINE).
 3. Click Run to see results.
 
-The Save Results button saves two CSV files (one CSV file for added emails and another CSV file for removed emails.
+The Save Results button saves two CSV files. One CSV file for added emails and another CSV file for removed emails.
 Both files are saved in the working directory of the program.
 The Reset button clears all text boxes for easy repeated use of the program.
