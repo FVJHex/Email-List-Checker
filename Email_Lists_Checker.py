@@ -11,7 +11,6 @@ def lists_calc():
     old_list = (old_list_tb.get(1.0, "end").lower().split("\n"))
     new_list = (new_list_tb.get(1.0, "end").lower().split("\n"))
 
-
     if len(old_list) != 2 and len(new_list) != 2:
         for email in new_list:
             if email not in old_list:
@@ -100,17 +99,15 @@ h = 900
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 x = (screen_width / 2) - (w / 2)
-y = (screen_height / 2) - (h / 2)-35
+y = (screen_height / 2) - (h / 2) - 35
 root.geometry("%dx%d+%d+%d" % (w, h, x, y))
 
 # endregion
 
 # region Frames
 lists_frame = tk.Frame(root, bg="black")
-lists_frame.grid()
 
 buttons_frame = tk.Frame(root, bg="black")
-buttons_frame.grid()
 # endregion
 
 # region Labels
@@ -121,7 +118,6 @@ old_list_label = ttk.Label(
     foreground="white",
     background="black"
 )
-old_list_label.grid()
 
 new_list_label = ttk.Label(
     lists_frame,
@@ -130,7 +126,6 @@ new_list_label = ttk.Label(
     foreground="white",
     background="black"
 )
-new_list_label.grid()
 
 add_list_label = ttk.Label(
     lists_frame,
@@ -140,7 +135,6 @@ add_list_label = ttk.Label(
     background="black"
 
 )
-add_list_label.grid()
 
 remove_list_label = ttk.Label(
     lists_frame,
@@ -149,23 +143,18 @@ remove_list_label = ttk.Label(
     foreground="red",
     background="black"
 )
-remove_list_label.grid()
 # endregion
 
 # region TextBoxes
 old_list_tb = tk.Text(lists_frame, width=47, height=45)
-old_list_tb.grid()
 
 new_list_tb = tk.Text(lists_frame, width=47, height=45)
-new_list_tb.grid()
 
 add_list_tb = tk.Text(lists_frame, width=47, height=45)
 add_list_tb["state"] = "disabled"
-add_list_tb.grid()
 
 remove_list_tb = tk.Text(lists_frame, width=47, height=45)
 remove_list_tb["state"] = "disabled"
-remove_list_tb.grid()
 # endregion
 
 # region Buttons
@@ -174,7 +163,6 @@ run_bt = ttk.Button(
     text="Run",
     command=lists_calc
 )
-run_bt.grid()
 
 save_bt = ttk.Button(
     buttons_frame,
@@ -182,14 +170,12 @@ save_bt = ttk.Button(
     command=csv_save
 )
 save_bt["state"] = "disabled"
-save_bt.grid()
 
 reset_bt = ttk.Button(
     buttons_frame,
     text="Reset",
     command=reset_press
 )
-reset_bt.grid()
 # endregion
 
 # region Grid Settings
@@ -219,7 +205,7 @@ reset_bt.grid(column=2, row=0, padx=50, pady=(0, 15))
 # region Variables
 to_add = []
 to_remove = []
-username = os.environ["USERNAME"]
+username = os.environ.get("USERNAME")
 dateformat = datetime.now().strftime("%m-%d-%Y-%H-%M-%S")
 cwd = os.getcwd()
 # endregion
